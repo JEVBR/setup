@@ -232,9 +232,44 @@ Run this command, it will **take a while (5-10 minutes)**
 ```bash
 rbenv install 2.6.5
 ```
+if this does not work, delete the .rbenv folder 
+install vscode (lazy to find out how to delete a hidden full dir)
 
-Once the ruby installation is done, run this command to tell the system
-to use the 2.6.5 version by default.
+```bash
+sudo apt update
+```
+
+```bash
+sudo apt install software-properties-common apt-transport-https wget
+```
+
+```bash
+wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
+```
+
+```bash
+sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
+```
+
+```bash
+sudo apt update
+```
+
+```bash
+sudo apt install code
+```
+then
+
+```bash
+cd
+git clone git://github.com/sstephenson/rbenv.git .rbenv
+echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.zshrc
+echo 'eval "$(rbenv init -)"' >> ~/.zshrc
+git clone git://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+
+
+source ~/.bashrc
+```
 
 ```bash
 rbenv global 2.6.5
